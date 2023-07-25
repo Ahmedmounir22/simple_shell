@@ -57,11 +57,11 @@ void _puts(char *str)
 	int i = 0;
 
 	if (!str)
-        return;
+		return;
 	while (str[i] != '\0')
 	{
-	    _putcahr(str[i]);
-	    i++;
+		_putcahr(str[i]);
+		i++;
 	}
 }
 
@@ -75,14 +75,13 @@ int _putchar(char c)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
-	
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
-    {
-        write(1, buf, i);
-        i = 0;
-    }
-    if (c != BUF_FLUSH)
-        buf[i++] = c;
-    return (i);
-}
 
+	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	{
+		write(1, buf, i);
+		i = 0;
+	}
+	if (c != BUF_FLUSH)
+		buf[i++] = c;
+	return (i);
+}
